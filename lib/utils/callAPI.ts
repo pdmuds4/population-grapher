@@ -4,7 +4,10 @@ export const callAPI = async <reqT>(endpoint: string, method: string, data?: req
         headers: {
             'Content-Type': 'application/json',
         },
-        body: method == "GET" ? null : JSON.stringify({api_key: process.env.SEC_KEY, ...data}),
+        body: method == "GET" ? null : JSON.stringify({
+            api_key: process.env.SEC_KEY, 
+            ...data
+        }),
     });
 
     if (!response.ok) {
