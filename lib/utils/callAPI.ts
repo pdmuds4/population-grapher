@@ -1,4 +1,4 @@
-export const callAPI = async <reqT, resT>(endpoint: string, method: string, data?: reqT) => {
+export const callAPI = async <reqT>(endpoint: string, method: string, data?: reqT) => {
     const response = await fetch(endpoint, {
         method: method,
         headers: {
@@ -8,8 +8,13 @@ export const callAPI = async <reqT, resT>(endpoint: string, method: string, data
     });
 
     if (!response.ok) {
-        throw new Error('Failed to fetch');
+        try {
+            const error = await response.json();
+            return {error: error.message, status: response.status};
+        } catch {
+            return {error: 'Missing Error Analize', status: response.status};
+        }
     }
 
-    return await response.json() as resT;
+    return await response.json();
 }
