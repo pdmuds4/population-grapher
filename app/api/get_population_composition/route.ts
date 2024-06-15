@@ -13,5 +13,5 @@ export async function POST(req: Request) {
         }
     }))
     
-    return Response.json({ data })
+    return Response.json(data)
 }
