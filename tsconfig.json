@@ -20,6 +20,7 @@
     "paths": {
       "@types/*": ["./lib/types/*"],
       "@components": ["./lib/components"],
+      "@components/*": ["./lib/components/*"],
       "@utils/*": ["./lib/utils/*"],
     }
   },
