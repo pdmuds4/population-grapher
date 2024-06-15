@@ -1,5 +1,5 @@
-import { callAPI } from "@utils/callAPI";
+import { callAPI } from "../lib/utils/callAPI";
 
 test("check", () => {
-
+    
 })
