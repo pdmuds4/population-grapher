@@ -19,10 +19,11 @@
       }
     ],
     "paths": {
-      "@types/*": ["./lib/types/*"],
       "@components": ["./lib/components"],
       "@utils/*": ["./lib/utils/*"],
-    }
+      "@repo/*": ["./lib/repository/*"],
+    },
+    "typeRoots": ["./lib/types"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

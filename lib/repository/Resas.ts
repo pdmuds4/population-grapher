@@ -1,4 +1,4 @@
-import type { populationComp, prefecture, resasErrorStatus } from "lib/types/Resas";
+import type { populationComp, prefecture, resasErrorStatus } from "Resas";
 
 export default class Resas {
     baseUrl: string;
