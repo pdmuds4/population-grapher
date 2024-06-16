@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import CheckBox from "./Checkbox";
 import "./style.css";
 import { useEffect, useState } from "react";

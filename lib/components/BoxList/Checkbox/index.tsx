@@ -2,7 +2,7 @@
 import "./style.css";
 import { useContext } from "react";
 import { callAPI } from "@utils/callAPI";
-import { Context } from "app/page";
+import { Context } from "@components/provider";
 import { toSeriesFormatter } from "@utils/toSeriesFormatter";
 
 type Props = {

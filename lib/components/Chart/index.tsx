@@ -3,7 +3,7 @@ import "./style.css";
 import { useContext, useEffect, useState } from "react";
 import Selector from "./Selector";
 import { LineChart } from "@mui/x-charts/LineChart";
-import { Context } from "app/page";
+import { Context } from "@components/provider";
 
 const Chart: React.FC = () => {
     const { context_data } = useContext(Context);
