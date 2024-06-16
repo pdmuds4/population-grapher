@@ -21,14 +21,21 @@ const Chart: React.FC = () => {
             <LineChart
                 width={chartWidth}
                 height={400}
+                margin={{ left: 90, bottom: 100 }}
                 series={context_data.series.map((prefData)=>{
                     return {
                         data: prefData.data[label_index],
                         label: prefData.label
                     }
                 })}
-                
                 xAxis={[{ scaleType: 'point', data: context_data.axisLabel }]}
+                grid={{ vertical: true, horizontal: true }}
+                slotProps={{
+                    legend: {
+                        position: {vertical: 'bottom', horizontal: 'middle'},
+                        
+                    }
+                }}
             />
         </div>
     )
