@@ -1,12 +1,12 @@
-import CheckBox from './Checkbox';
+import BoxList from './BoxList';
+import Chart from './Chart';
 import Header from './Header';
 import MainBody from './MainBody';
-import Selector from './Selector';
 
 
 export {
-    CheckBox,
+    BoxList,
+    Chart,
     Header,
     MainBody,
-    Selector
 }

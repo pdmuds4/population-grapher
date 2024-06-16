@@ -1,5 +1,5 @@
 "use client";
-import { CheckBox } from "@components";
+import CheckBox from "./Checkbox";
 import "./style.css";
 import { useEffect, useState } from "react";
 import { callAPI } from "@utils/callAPI";
