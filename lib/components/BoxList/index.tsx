@@ -12,14 +12,14 @@ const BoxList: React.FC = () => {
         const session = sessionStorage.getItem("apidata");
         if (session) {
             setPrefs(JSON.parse(session));
-            console.log("Use Session Storage")
+            console.log("[CheckBox]: Use Session Storage")
         } else {
             callAPI("/api/get_prefectures", "GET")
                 .then((res) => {
                     setPrefs(res.data);
                     sessionStorage.setItem("apidata", JSON.stringify(res.data));
             })
-            console.log("Session Storage Reloaded")
+            console.log("[CheckBox]: Session Storage Reloaded")
         }
     }, []);
 
@@ -29,8 +29,8 @@ const BoxList: React.FC = () => {
                 prefs.map((pref) => 
                     <CheckBox
                         key={pref.prefCode}
-                        label={pref.prefName} 
-                        changehandler={()=>console.log(pref.prefName)}
+                        code={pref.prefCode}
+                        label={pref.prefName}
                     />
                 )
             }

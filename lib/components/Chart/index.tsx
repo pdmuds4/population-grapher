@@ -13,6 +13,7 @@ const Chart: React.FC = () => {
 
     const uData = [4000, 3000, 2000, 2780, 1890, 2390, 3490];
     const pData = [2400, 1398, 9800, 3908, 4800, 3800, 4300];
+    const xLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
     return (
         <div className="chart-graph">
@@ -25,7 +26,7 @@ const Chart: React.FC = () => {
                     { data: uData, label: 'uv' },
                 ]}
                 
-                //xAxis={[{ scaleType: 'point', data: xLabels }]}
+                xAxis={[{ scaleType: 'point', data: xLabels }]}
             />
         </div>
     )
