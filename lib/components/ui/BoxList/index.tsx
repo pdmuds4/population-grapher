@@ -1,18 +1,39 @@
 "use client";
 import { CheckBox } from "@components";
 import "./style.css";
+import { useEffect, useState } from "react";
+import { callAPI } from "@utils/callAPI";
+import { prefecture } from "Resas";
 
 const BoxList: React.FC = () => {
+
+    const [prefs, setPrefs] = useState<prefecture[]>([]);
+    useEffect(() => {
+        const session = sessionStorage.getItem("apidata");
+        if (session) {
+            setPrefs(JSON.parse(session));
+            console.log("Use Session Storage")
+        } else {
+            callAPI("/api/get_prefectures", "GET")
+                .then((res) => {
+                    setPrefs(res.data);
+                    sessionStorage.setItem("apidata", JSON.stringify(res.data));
+            })
+            console.log("Session Storage Reloaded")
+        }
+    }, []);
+
     return (
         <div className="boxlist-body">
-            <CheckBox label="北海道" handler={()=>console.log(1)}/>
-            <CheckBox label="青森県" handler={()=>console.log(2)}/>
-            <CheckBox label="岩手県" handler={()=>console.log(3)}/>
-            <CheckBox label="宮城県" handler={()=>console.log(4)}/>
-            <CheckBox label="秋田県" handler={()=>console.log(5)}/>
-            <CheckBox label="山形県" handler={()=>console.log(6)}/>
-            <CheckBox label="福島県" handler={()=>console.log(7)}/>
-            <CheckBox label="茨城県" handler={()=>console.log(8)}/>
+            {
+                prefs.map((pref) => 
+                    <CheckBox
+                        key={pref.prefCode}
+                        label={pref.prefName} 
+                        changehandler={()=>console.log(pref.prefName)}
+                    />
+                )
+            }
         </div>
     );
 }
