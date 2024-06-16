@@ -6,7 +6,7 @@ export async function POST(req: Request) {
     const RESAS = new Resas(process.env.RESAS_KEY || "")
     
     const data = await Promise.all(request.prefCodes.map(async (code) => {
-        let prefData = await RESAS.getPopulationComps(code, request.label)
+        let prefData = await RESAS.getPopulationComps(code)
         return {
             prefCode: code,
             data: prefData
