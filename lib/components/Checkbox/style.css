@@ -1,0 +1,21 @@
+.checkbox-body {
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+    margin: 1vh 0;
+}
+
+@media screen and (max-width: 425px) {
+    .checkbox-body {
+        width: 33%;
+    }
+}
+
+.checkbox-btn {
+    transform: scale(1.5);
+}
+
+.checkbox-label {
+    font-size: 3vh;
+    margin-left: 1vw;
+}
