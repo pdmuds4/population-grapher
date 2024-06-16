@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import "./style.css";
 import { useContext } from "react";
 import { callAPI } from "@utils/callAPI";
