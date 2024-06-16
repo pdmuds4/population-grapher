@@ -7,13 +7,3 @@ export type getPrefecturesRes = {
 export type getPopulationCompsReq = {
     prefCode: number
 }
-
-export type getPopulationCompsRes = {
-    data: {
-        prefCode: number,
-        data: {
-            year: number,
-            value: number
-        }[]
-    }[]
-}
