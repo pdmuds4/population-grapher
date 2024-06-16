@@ -5,8 +5,7 @@ export type getPrefecturesRes = {
 }
 
 export type getPopulationCompsReq = {
-    prefCodes: number[],
-    label: 0 | 1 | 2 | 3
+    prefCodes: number[]
 }
 
 export type getPopulationCompsRes = {
