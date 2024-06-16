@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import { createContext, useState } from 'react';
 import { Header, MainBody, BoxList, Chart } from '@components';
 import { contextConfig, contextData } from 'context';

@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import "./style.css";
 import { useContext, useEffect, useState } from "react";
 import Selector from "./Selector";
